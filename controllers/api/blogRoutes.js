@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
-      blog_id: 1,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(newBlog);

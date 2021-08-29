@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const commentAdd = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#comment-title').value.trim();
@@ -20,7 +20,8 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        // document.location.replace('/');
+        
       } else {
         alert('Failed to create comment');
       }
@@ -30,4 +31,4 @@ const newFormHandler = async (event) => {
 
   
   document
-    .addEventListener('submit', newFormHandler);
+    .addEventListener('submit', commentAdd);
