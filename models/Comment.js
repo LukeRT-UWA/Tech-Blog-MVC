@@ -18,7 +18,7 @@ Comment.init(
     content: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
     },
     blog_id: {
       type: DataTypes.INTEGER,
@@ -27,13 +27,13 @@ Comment.init(
         key: 'id',
       },
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
 },
   {
     sequelize,

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog } = require('../models');
+const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Prevent non logged in users from viewing the homepage
@@ -90,13 +90,15 @@ router.get('/blog/:id', async (req, res) => {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
+          model: Comment,
+          attributes: ['content'],
           model: User,
           attributes: ['username'],
         },
       ],
     });
 
-    const blog = blogData.get({ plain: true });
+    const blog = blogData.map((blog) => blog.get({ plain: true }));
 
     res.render('blog', {
       ...blog,
