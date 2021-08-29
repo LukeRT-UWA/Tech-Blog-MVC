@@ -1,5 +1,5 @@
 {
-  "name": "tech-blog-mvc",
+  "name": "Tech-Blog-MVC",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,10 +10,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
-    "handlebars": "^4.7.7",
-    "init": "^0.1.2",
     "mysql2": "^2.3.0",
-    "npm": "^7.21.1",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {},
@@ -25,6 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/LukeRT-UWA/Tech-Blog-MVC.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
