@@ -91,14 +91,13 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['content'],
           model: User,
           attributes: ['username'],
         },
       ],
     });
 
-    const blog = blogData.map((blog) => blog.get({ plain: true }));
+    const blog = blogData.get({ plain: true });
 
     res.render('blog', {
       ...blog,
