@@ -19,8 +19,8 @@
     </form>
   </div>
 
-<h1>Comment: {{comment.content}}</h1>
-
+{{!-- <h1>Comment: {{blog.comments}}</h1> --}}
+            
 
   <div class="col-md-6 project-list">
     <h3>Comments:</h3>
@@ -28,7 +28,7 @@
     {{#each comments as |comment|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h3>here:{{comment:content}}</h3>
+        <h3>here:{{comment.content}}</h3>
       </div>
     </div>
     {{/each}}

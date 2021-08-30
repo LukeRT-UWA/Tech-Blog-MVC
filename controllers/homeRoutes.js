@@ -91,6 +91,9 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: Comment,
+        },
+        {
+          
           model: User,
           attributes: ['username'],
         },
@@ -98,10 +101,9 @@ router.get('/blog/:id', async (req, res) => {
     });
 
     const blog = blogData.get({ plain: true });
-
+    console.log(blog)
     res.render('blog', {
       ...blog,
-      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
