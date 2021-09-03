@@ -15,6 +15,30 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try { 
+    const title = req.body.title
+    const content = req.body.content
+    
+    const blogData = await Blog.findByPk(req.params.id)
+  
+    if (blogData === null) {
 
+      res.status(400).json("Not found!")
+      return 
+    }
+    
+    blogData.title = (title !== undefined) ? title : blogData.title
+    blogData.content = (content !== undefined) ? content : blogData.content
+
+    const newBlogData = await blogData.save()
+    res.json(newBlogData)
+  }
+
+
+
+
+  catch (err) {}
+})
 
 module.exports = router;

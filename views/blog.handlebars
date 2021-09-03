@@ -1,6 +1,16 @@
 <h3>Posted by {{user.username}}</h3>
-<h4>{{id}}<br>{{title}}<br>{{content}}</h4>
 
+
+  
+{{#if is_current_logged_in_user_author}}
+
+<input type="text" id="blog-title" name="blog-title" value="{{title}}"/>
+<textarea type="text" id="blog-content" name="blog-content" >{{content}}</textarea>
+{{else}}
+
+<h4>{{title}}<br>{{content}}</h4>
+
+{{/if}}
   <div class="col-md-6">
     <h3>Add a comment to post:</h3>
 

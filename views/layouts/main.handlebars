@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 
 <body>
@@ -16,11 +16,13 @@
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     <nav>
-      <a href="/">homepage</a>
-      <a href="/dashboard">dashboard</a>
       <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
+    <nav>
+      <a href="/">homepage</a>
+      <a href="/dashboard">dashboard</a>
+    </nav>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}

@@ -78,7 +78,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     res.render('dashboard', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -104,6 +104,8 @@ router.get('/blog/:id', async (req, res) => {
     console.log(blog)
     res.render('blog', {
       ...blog,
+      logged_in: req.session.logged_in,
+      is_current_logged_in_user_author: (req.session.user_id === blogData.user_id)
     });
   } catch (err) {
     res.status(500).json(err);
