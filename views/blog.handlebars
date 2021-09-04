@@ -3,9 +3,14 @@
 
   
 {{#if is_current_logged_in_user_author}}
-
+<form class="editPost"></form>
 <input type="text" id="blog-title" name="blog-title" value="{{title}}"/>
 <textarea type="text" id="blog-content" name="blog-content" >{{content}}</textarea>
+<div class="form-group">
+<button id="editButton" type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<script src="/js/editpost.js"></script>
 {{else}}
 
 <h4>{{title}}<br>{{content}}</h4>
@@ -29,7 +34,7 @@
     </form>
   </div>
 
-{{!-- <h1>Comment: {{blog.comments}}</h1> --}}
+
             
 
   <div class="col-md-6 project-list">
@@ -38,7 +43,8 @@
     {{#each comments as |comment|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h3>here:{{comment.content}}</h3>
+        <h3>comment username:{{user.username}}</h3>
+        <h3>comment content:{{comment.content}}</h3>
       </div>
     </div>
     {{/each}}

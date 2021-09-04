@@ -91,6 +91,7 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: Comment,
+          include: [User]
         },
         {
           
