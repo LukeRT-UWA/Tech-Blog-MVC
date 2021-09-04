@@ -20,6 +20,10 @@ Comment.init(
       allowNull: false,
       unique: false,
     },
+    created_date: { 
+      type: DataTypes.DATE, 
+      defaultValue: DataTypes.NOW 
+    },
     blog_id: {
       type: DataTypes.INTEGER,
       references: {
