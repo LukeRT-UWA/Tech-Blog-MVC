@@ -8,7 +8,7 @@ const editBlogHandler = async (event) => {
     ];
     if (title && content) 
     {
-      const response = await fetch(`/api/blogs`, {
+      const response = await fetch(`/api/blogs/${blog_id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content, blog_id }),
         headers: {
