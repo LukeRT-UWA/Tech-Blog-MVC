@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { request } = require('express');
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -34,11 +35,23 @@ router.put('/:id', withAuth, async (req, res) => {
     const newBlogData = await blogData.save()
     res.json(newBlogData)
   }
-
-
-
-
   catch (err) {}
 })
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    await Blog.destroy({
+      where: {
+        id: req.body.blog_id
+      }
+    });
+    
+    res.status(200).json("success!");
+  } catch (err) {
+    console.error(err)
+    res.status(400).json(err);
+    
+  }
+});
 
 module.exports = router;
