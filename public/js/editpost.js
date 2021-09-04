@@ -1,4 +1,3 @@
-const editButton = document.getElementById("editButton");
 const editBlogHandler = async (event) => {
     event.preventDefault();
     alert('buttonPushed')
@@ -28,5 +27,6 @@ const editBlogHandler = async (event) => {
   
 
   
-  
-  editButton.addEventListener("submit", editBlogHandler);
+  document
+    .querySelector('.edit-form')
+    .addEventListener('submit', editBlogHandler);

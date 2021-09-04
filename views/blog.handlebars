@@ -3,18 +3,20 @@
 
 
 {{#if is_current_logged_in_user_author}}
-<form class="editPost"></form>
+<form class="form edit-form"></form>
   <div class="form-group"></div>
+    <label for="blog-title">blog title:</label>
     <input type="text" id="blog-title" name="blog-title" value="{{title}}" />
   </div>
   <div class="form-group"></div>
+    <label for="blog-content">blog content:</label>
     <textarea type="text" id="blog-content" name="blog-content">{{content}}</textarea>
   </div>
   <div class="form-group">
-    <button id="editButton" type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-<script src="/js/editpost.js"></script>
+
 {{else}}
 
 <h4>{{title}}<br>{{content}}</h4>
@@ -23,7 +25,7 @@
 <div class="col-md-6">
   <h3>Add a comment to post:</h3>
 
-  <form class="form new-project-form">
+  <form class="form new-comment-form">
     <div class="form-group">
       <label for="comment-title">comment title:</label>
       <input class="form-input" type="text" id="comment-title" name="comment-title" />
@@ -53,5 +55,5 @@
   </div>
   {{/each}}
 
-
+  <script src="/js/editpost.js"></script>
   <script src="/js/comment.js"></script>
