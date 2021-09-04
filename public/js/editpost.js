@@ -7,7 +7,7 @@ const editBlogHandler = async (event) => {
     const blog_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    // if (title && content) 
+    if (title && content) 
     {
       const response = await fetch(`/api/blogs`, {
         method: 'PUT',

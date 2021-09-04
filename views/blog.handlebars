@@ -1,14 +1,18 @@
 <h3>Posted by {{user.username}}</h3>
 
 
-  
+
 {{#if is_current_logged_in_user_author}}
 <form class="editPost"></form>
-<input type="text" id="blog-title" name="blog-title" value="{{title}}"/>
-<textarea type="text" id="blog-content" name="blog-content" >{{content}}</textarea>
-<div class="form-group">
-<button id="editButton" type="submit" class="btn btn-primary">Submit</button>
-</div>
+  <div class="form-group"></div>
+    <input type="text" id="blog-title" name="blog-title" value="{{title}}" />
+  </div>
+  <div class="form-group"></div>
+    <textarea type="text" id="blog-content" name="blog-content">{{content}}</textarea>
+  </div>
+  <div class="form-group">
+    <button id="editButton" type="submit" class="btn btn-primary">Submit</button>
+  </div>
 </form>
 <script src="/js/editpost.js"></script>
 {{else}}
@@ -16,38 +20,38 @@
 <h4>{{title}}<br>{{content}}</h4>
 
 {{/if}}
-  <div class="col-md-6">
-    <h3>Add a comment to post:</h3>
+<div class="col-md-6">
+  <h3>Add a comment to post:</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="comment-title">comment title:</label>
-        <input class="form-input" type="text" id="comment-title" name="comment-title" />
-      </div>
-      <div class="form-group">
-        <label for="comment-text">comment text:</label>
-        <textarea class="form-input" id="comment-text" name="comment-text"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-
-            
-
-  <div class="col-md-6 project-list">
-    <h3>Comments:</h3>
-
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h3>comment username:{{user.username}}</h3>
-        <h3>comment content:{{comment.content}}</h3>
-      </div>
+  <form class="form new-project-form">
+    <div class="form-group">
+      <label for="comment-title">comment title:</label>
+      <input class="form-input" type="text" id="comment-title" name="comment-title" />
     </div>
-    {{/each}}
- 
+    <div class="form-group">
+      <label for="comment-text">comment text:</label>
+      <textarea class="form-input" id="comment-text" name="comment-text"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </form>
+</div>
 
-<script src="/js/comment.js"></script>
+
+
+
+<div class="col-md-6 project-list">
+  <h3>Comments:</h3>
+
+  {{#each comments as |comment|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h3>comment username:{{user.username}}</h3>
+      <h3>comment content:{{comment.content}}</h3>
+    </div>
+  </div>
+  {{/each}}
+
+
+  <script src="/js/comment.js"></script>
