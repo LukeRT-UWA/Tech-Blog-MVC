@@ -1,4 +1,4 @@
-<h3>Posted by {{user.username}}</h3>
+<h3>Posted by {{user.username}} at {{created_date}}</h3>
 
 
 
@@ -51,8 +51,7 @@
   {{#each comments as |comment|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <h3>comment time {{comment.created_date}}</h3>
-      <h3>comment username:{{user.username}}</h3>
+      <h3>Posted by {{user.username}} at {{comment.created_date}}</h3>
       <h3>comment content:{{comment.content}}</h3>
     </div>
   </div>

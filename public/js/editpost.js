@@ -1,6 +1,5 @@
 const editBlogHandler = async (event) => {
     // event.preventDefault();
-    alert('buttonPushed')
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
     const blog_id = window.location.toString().split('/')[
