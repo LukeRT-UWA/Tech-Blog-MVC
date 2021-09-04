@@ -1,5 +1,5 @@
 const editBlogHandler = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     alert('buttonPushed')
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
@@ -28,5 +28,5 @@ const editBlogHandler = async (event) => {
 
   
   document
-    .querySelector('.edit-form')
-    .addEventListener('submit', editBlogHandler);
+    .querySelector('#editbutton')
+    .addEventListener('click', editBlogHandler);

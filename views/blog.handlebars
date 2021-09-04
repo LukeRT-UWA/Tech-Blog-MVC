@@ -13,15 +13,14 @@
     <textarea type="text" id="blog-content" name="blog-content">{{content}}</textarea>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button id ="editbutton" type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-
+<script src="/js/editpost.js"></script>
 {{else}}
 
 <h4>{{title}}<br>{{content}}</h4>
 
-{{/if}}
 <div class="col-md-6">
   <h3>Add a comment to post:</h3>
 
@@ -35,10 +34,13 @@
       <textarea class="form-input" id="comment-text" name="comment-text"></textarea>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button id = "editbutton" type="submit" class="btn btn-primary">Create</button>
     </div>
   </form>
 </div>
+ <script src="/js/comment.js"></script>
+{{/if}}
+
 
 
 
@@ -55,5 +57,5 @@
   </div>
   {{/each}}
 
-  <script src="/js/editpost.js"></script>
-  <script src="/js/comment.js"></script>
+  
+ 
